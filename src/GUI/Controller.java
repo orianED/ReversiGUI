@@ -1,5 +1,6 @@
 package GUI;
 
+import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -35,6 +36,6 @@ public class Controller {
 
     @FXML
     protected void exit() {
-
+        System.exit(1);
     }
 }
