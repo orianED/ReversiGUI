@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SettingsController">
+   <children>
+      <HBox layoutX="225.0" layoutY="32.0">
+         <children>
+            <ChoiceBox fx:id="first_player" layoutX="225.0" layoutY="30.0" prefHeight="30.0" prefWidth="100.0" AnchorPane.bottomAnchor="303.0" AnchorPane.leftAnchor="225.0" AnchorPane.rightAnchor="225.0" AnchorPane.topAnchor="32.0" />
+         </children>
+      </HBox>
+      <Label layoutX="50.0" layoutY="30.0" text="First Player:">
+         <font>
+            <Font name="Arial" size="15.0" />
+         </font>
+      </Label>
+      <ColorPicker layoutX="150.0" layoutY="80.0" prefHeight="30.0" prefWidth="100.0" />
+      <ColorPicker layoutX="400.0" layoutY="80.0" prefHeight="30.0" prefWidth="100.0" />
+      <ChoiceBox layoutX="200.0" layoutY="174.0" prefWidth="150.0" />
+   </children>
+</AnchorPane>
