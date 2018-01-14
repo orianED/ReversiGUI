@@ -1,12 +1,14 @@
 package GUI;
 
-import javafx.application.Platform;
+import Game.Board;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Scene;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.stage.Stage;
 
 import java.awt.*;
@@ -21,8 +23,12 @@ public class Controller {
     private Button exit;
 
     @FXML
-    protected void start() {
-
+    protected void start(ActionEvent event) throws IOException {
+        AnchorPane game = FXMLLoader.load(getClass().getResource("../Game/Game.fxml"));
+        Scene g = new Scene(game);
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setScene(g);
+        stage.show();
     }
 
     @FXML

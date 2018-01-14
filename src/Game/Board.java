@@ -15,7 +15,7 @@ public class Board extends GridPane {
 
     public Board(int size) {
         this.board_size = size;
-        this.game_board = new char[size][size];
+        this.game_board = new char[size + 1][size + 1];
 
         for (int i = 0; i < size + 1; ++i) {
             this.game_board[i] = new char[size + 1];
@@ -29,7 +29,7 @@ public class Board extends GridPane {
         this.game_board[size / 2][(size / 2) + 1] = 'X';
 
         FXMLLoader fxmlLoader = new
-                FXMLLoader(getClass().getResource("GameController.fxml"));
+                FXMLLoader(getClass().getResource("Game.fxml"));
         fxmlLoader.setRoot(this);
         fxmlLoader.setController(this);
 
