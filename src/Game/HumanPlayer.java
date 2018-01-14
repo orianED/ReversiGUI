@@ -1,20 +1,27 @@
 package Game;
 
+import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class HumanPlayer implements Players {
-    private char player_color;
+    private char sign;
+    private Color color;
 
     public HumanPlayer(char player_color) {
-        this.player_color = player_color;
+        this.sign = player_color;
+    }
+
+    public Color getColor() {
+        return color;
     }
 
     @Override
     public Cell play(ArrayList<Cell> possibleMoves) {
         int x, y;
         Scanner scanner = new Scanner(System.in);
-        System.out.println(this.player_color + ": It's your move.");
+        System.out.println(this.sign + ": It's your move.");
         System.out.println("Your possible moves:");
         for (int i = 0; i < possibleMoves.size(); ++i) {
             Cell c = possibleMoves.get(i);
@@ -36,4 +43,6 @@ public class HumanPlayer implements Players {
             System.out.println("Wrong entry!");
         }
     }
+
+
 }

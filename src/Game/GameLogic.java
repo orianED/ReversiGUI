@@ -6,8 +6,8 @@ public class GameLogic {
     private Board board;
     int xScore, oScore;
 
-    public GameLogic(int board_size) {
-        this.board = new Board(board_size);
+    public GameLogic(Board b) {
+        this.board = b;
         this.xScore = 2;
         this.oScore = 2;
     }
