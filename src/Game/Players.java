@@ -6,6 +6,7 @@ import java.util.ArrayList;
 
 public interface Players {
     public Color getColor();
+    public char getSign();
 
     public Cell play(ArrayList<Cell> possibleMoves);
 }

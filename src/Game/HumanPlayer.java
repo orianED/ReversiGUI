@@ -16,7 +16,9 @@ public class HumanPlayer implements Players {
     public Color getColor() {
         return color;
     }
-
+    public char getSign() {
+        return this.sign;
+    }
     @Override
     public Cell play(ArrayList<Cell> possibleMoves) {
         int x, y;

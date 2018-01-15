@@ -9,11 +9,17 @@ import javafx.scene.shape.Rectangle;
 
 import java.util.ArrayList;
 
-public class Board extends GridPane {
+public class Board extends GridPane implements Notifier {
     private int board_size;
     private char game_board[][];
+    private ArrayList<Cell> possibles_moves;
+    private Color xColor;
+    private Color oColor;
+
+    private ArrayList<Listener> listener;
 
     public Board(int size) {
+        this.listener = new ArrayList<>();
         this.board_size = size;
         this.game_board = new char[this.board_size][this.board_size];
 
@@ -42,6 +48,9 @@ public class Board extends GridPane {
     }
 
     public void draw(ArrayList<Cell> possibles_moves, Color xColor, Color oColor) {
+        this.possibles_moves=possibles_moves;
+        this.xColor=xColor;
+        this.oColor=oColor;
         this.getChildren().clear();
         int height = (int) this.getPrefHeight();
         int width = (int) this.getPrefWidth();
@@ -66,12 +75,24 @@ public class Board extends GridPane {
                             Node chosen = (Node) event.getSource();
                             int row = GridPane.getRowIndex(chosen);
                             int col = GridPane.getColumnIndex(chosen);
-                            Cell chosenCell = new Cell(row, col);
-                            System.exit(1);
+                            System.out.println(row+" "+col);
+                            this.clickNotify(row, col);
                         });
                     }
                 }
             }
+        }
+    }
+
+    @Override
+    public void addListener(Listener listener) {
+        this.listener.add(listener);
+    }
+
+    @Override
+    public void clickNotify(int row, int col) {
+        for (Listener listen : this.listener) {
+            listen.click(new Cell(row, col));
         }
     }
 }
