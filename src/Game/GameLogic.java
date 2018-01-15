@@ -17,17 +17,17 @@ public class GameLogic {
         boolean found;
         ArrayList<Cell> possible_moves = new ArrayList<>();
 
-        for (int i = 1; i <= this.board.getSize();
+        for (int i = 0; i < this.board.getSize();
              ++i) {
-            for (int j = 1; j <= this.board.getSize();
+            for (int j = 0; j < this.board.getSize();
                  j++) {
                 if (this.board.getBoard()[i][j] == ' ') {
                     found = false;
                     for (int k = -1; k <= 1; ++k) {
                         for (int l = -1; l <= 1; ++l) {
                             temp = 1; //raised for each second player sign in a row(col/cross).
-                            if ((i + (k * temp)) <= this.board.getSize()
-                                    && (j + (l * temp)) <= this.board.getSize()
+                            if ((i + (k * temp)) < this.board.getSize()
+                                    && (j + (l * temp)) < this.board.getSize()
                                     && (i + (k * temp)) > 0 && (j + (l * temp)) > 0
                                     && this.board.getBoard()[i + (k * temp)][j
                                     + (l * temp)] != ' '

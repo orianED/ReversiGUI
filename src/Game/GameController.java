@@ -16,12 +16,25 @@ public class GameController implements Initializable {
     private Board board;
     @FXML
     private GameProcessInfo pro;
+    private GameLogic gameLogic;
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        this.root = new HBox();
         this.board = new Board(8);
+        this.board.setPrefHeight(400);
+        this.board.setPrefWidth(400);
         root.getChildren().add(0, board);
-        board.drawOn(new ArrayList<Cell>(), Color.gray(0), Color.gray(100));
+        this.gameLogic = new GameLogic(this.board);
+
+        root.widthProperty().addListener((observable, oldValue, newValue) -> {
+            double boardNewWidth = newValue.doubleValue();
+            this.board.setPrefWidth(boardNewWidth);
+            this.board.draw(this.gameLogic.generateMoves('X'), Color.BLACK, Color.WHITE);
+        });
+
+        root.heightProperty().addListener((observable, oldValue, newValue) -> {
+            this.board.setPrefHeight(newValue.doubleValue());
+            this.board.draw(this.gameLogic.generateMoves('X'), Color.BLACK, Color.WHITE);
+        });
     }
 }

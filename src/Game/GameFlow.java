@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class GameFlow {
     Board board;
     private GameLogic gl;
-    private Players pX, pO;
+    private Players pX, pO, currentPlayer, nextPlayer;
 
     public GameFlow() {
         System.out.println("Please choose board size 4-20(even):");
@@ -24,6 +24,8 @@ public class GameFlow {
 
         this.pX = new HumanPlayer('X');
         this.pO = new HumanPlayer('O');
+        this.currentPlayer = this.pX;
+        this.nextPlayer = this.pO;
     }
 
     public void run() {
@@ -33,14 +35,14 @@ public class GameFlow {
             flagO = 1;
             flagX = 1;
             moves = this.gl.generateMoves('X');
-            this.board.drawOn(moves, this.pX.getColor(), this.pO.getColor());
+            this.board.draw(moves, this.pX.getColor(), this.pO.getColor());
             if (!moves.isEmpty())
                 this.gl.makeMove(this.pX.play(moves), 'X');
             else
                 flagX--;
             moves.clear();
             moves = this.gl.generateMoves('O');
-            this.board.drawOn(moves, this.pX.getColor(), this.pO.getColor());
+            this.board.draw(moves, this.pX.getColor(), this.pO.getColor());
             if (!moves.isEmpty())
                 this.gl.makeMove(this.pO.play(moves), 'O');
             else
