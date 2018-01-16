@@ -6,12 +6,21 @@ public class GameLogic {
     private Board board;
     int xScore, oScore;
 
+    /**
+     * Constructor
+     *
+     * @param b the size of the board.
+     */
     public GameLogic(Board b) {
         this.board = b;
         this.xScore = 2;
         this.oScore = 2;
     }
 
+    /**
+     * generateMoves function check all the moves the player
+     * can play and return it in vector of Cells.
+     */
     public ArrayList<Cell> generateMoves(char player_color) {
         int temp;
         boolean found;
@@ -69,6 +78,9 @@ public class GameLogic {
         return possible_moves;
     }
 
+    /**
+     * makeMove function set the move by the cell into the board.
+     */
     public void makeMove(Cell cell, char player_color) {
         int temp;
         ArrayList<Cell> cells_to_change = new ArrayList<>();
@@ -120,6 +132,9 @@ public class GameLogic {
         this.board.getBoard()[cell.getRow()][cell.getCol()] = player_color;
     }
 
+    /**
+     * changeCells function change all the vector cell to the new symbol.
+     */
     public void changeCells(ArrayList<Cell> cells_to_change, char sign) {
         for (int i = 0; i < cells_to_change.size(); i++) {
             this.board.getBoard()[cells_to_change.get(i).getRow()][cells_to_change.get(i).getCol()] =
@@ -134,10 +149,16 @@ public class GameLogic {
         }
     }
 
+    /**
+     * @return int - the x player score
+     */
     public int getxScore() {
         return xScore;
     }
 
+    /**
+     * @return int - the o player score
+     */
     public int getoScore() {
         return oScore;
     }

@@ -16,9 +16,11 @@ public class Board extends GridPane implements Notifier {
     private ArrayList<Cell> possibles_moves;
     private Color xColor;
     private Color oColor;
-
     private ArrayList<Listener> listener;
 
+    /**
+     * Constructor - make the starting board.
+     */
     public Board(int size) {
         this.listener = new ArrayList<>();
         this.board_size = size;
@@ -40,14 +42,27 @@ public class Board extends GridPane implements Notifier {
         fxmlLoader.setController(this);
     }
 
+    /**
+     * return the size of the board.
+     */
     public int getSize() {
         return board_size;
     }
 
+    /**
+     * return the board array.
+     */
     public char[][] getBoard() {
         return game_board;
     }
 
+    /**
+     * draw the board on the screen
+     *
+     * @param possibles_moves - possible moves to draw on board
+     * @param xColor          - x player color
+     * @param oColor          - o player color
+     */
     public void draw(ArrayList<Cell> possibles_moves, Color xColor, Color oColor) {
         this.possibles_moves = possibles_moves;
         this.xColor = xColor;
@@ -91,11 +106,22 @@ public class Board extends GridPane implements Notifier {
         }
     }
 
+    /**
+     * add listener to the listener list
+     *
+     * @param listener
+     */
     @Override
     public void addListener(Listener listener) {
         this.listener.add(listener);
     }
 
+    /**
+     * notify the listener that click happened
+     *
+     * @param row
+     * @param col
+     */
     @Override
     public void clickNotify(int row, int col) {
         for (Listener listen : this.listener) {
