@@ -1,5 +1,7 @@
 package Game;
 
+import javafx.scene.paint.Color;
+
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -22,8 +24,8 @@ public class GameFlow {
         this.board = new Board(size);
         this.gl = new GameLogic(board);
 
-        this.pX = new HumanPlayer('X');
-        this.pO = new HumanPlayer('O');
+        this.pX = new HumanPlayer('X', Color.BLACK);
+        this.pO = new HumanPlayer('O', Color.WHITE);
         this.currentPlayer = this.pX;
         this.nextPlayer = this.pO;
     }

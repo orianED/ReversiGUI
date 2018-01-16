@@ -75,12 +75,14 @@ public class GameLogic {
         for (int k = -1; k <= 1; ++k) {
             for (int l = -1; l <= 1; ++l) {
                 temp = 1;
-                if ((cell.getRow() + (k * temp)) <= this.board.getSize()
-                        && (cell.getCol() + (l * temp)) <= this.board.getSize()
+                if ((cell.getRow() + (k * temp)) < this.board.getSize()
+                        && (cell.getCol() + (l * temp)) < this.board.getSize()
+                        && (cell.getRow() + (k * temp)) >= 0
+                        && (cell.getCol() + (l * temp)) >= 0
                         && this.board.getBoard()[cell.getRow() + (k * temp)][cell.getCol()
                         + (l * temp)] != ' '
                         && this.board.getBoard()[cell.getRow() + (k * temp)][cell.getCol()
-                        + (l * temp)] != player_color && (l != 0 || k != 0)) {
+                        + (l * temp)] != player_color) {
                     while (true) {
                         temp++;
                         if ((cell.getRow() + (k * temp)) > this.board.getSize()
@@ -90,9 +92,9 @@ public class GameLogic {
                                 + (l * temp)] == ' ') {
                             break;
                         } else if ((cell.getRow() + (k * temp))
-                                <= this.board.getSize()
+                                < this.board.getSize()
                                 && (cell.getCol() + (l * temp))
-                                <= this.board.getSize()
+                                < this.board.getSize()
                                 && this.board.getBoard()[cell.getRow() + (k * temp)][cell.getCol()
                                 + (l * temp)] == player_color) {
                             while (temp > 1) {

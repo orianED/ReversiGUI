@@ -9,16 +9,19 @@ public class HumanPlayer implements Players {
     private char sign;
     private Color color;
 
-    public HumanPlayer(char player_color) {
-        this.sign = player_color;
+    public HumanPlayer(char sign, Color color) {
+        this.sign = sign;
+        this.color = color;
     }
 
     public Color getColor() {
         return color;
     }
+
     public char getSign() {
         return this.sign;
     }
+
     @Override
     public Cell play(ArrayList<Cell> possibleMoves) {
         int x, y;

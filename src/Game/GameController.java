@@ -6,7 +6,6 @@ import javafx.scene.layout.HBox;
 import javafx.scene.paint.Color;
 
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 public class GameController implements Initializable, Listener {
@@ -28,9 +27,10 @@ public class GameController implements Initializable, Listener {
         this.gameLogic = new GameLogic(this.board);
         this.board.addListener(this);
 
-        this.currentPlayer = new HumanPlayer('X');
-        this.nextPlayer = new HumanPlayer('O');
-        this.board.draw(this.gameLogic.generateMoves(this.currentPlayer.getSign()), Color.BLACK, Color.WHITE);
+        this.currentPlayer = new HumanPlayer('X', Color.BLACK);
+        this.nextPlayer = new HumanPlayer('O', Color.WHITE);
+
+        this.board.draw(this.gameLogic.generateMoves(this.currentPlayer.getSign()), this.currentPlayer.getColor(), this.nextPlayer.getColor());
     }
 
     @Override

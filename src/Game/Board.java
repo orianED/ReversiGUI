@@ -1,6 +1,7 @@
 package Game;
 
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.HPos;
 import javafx.scene.Node;
 import javafx.scene.layout.GridPane;
 import javafx.scene.paint.Color;
@@ -48,9 +49,9 @@ public class Board extends GridPane implements Notifier {
     }
 
     public void draw(ArrayList<Cell> possibles_moves, Color xColor, Color oColor) {
-        this.possibles_moves=possibles_moves;
-        this.xColor=xColor;
-        this.oColor=oColor;
+        this.possibles_moves = possibles_moves;
+        this.xColor = xColor;
+        this.oColor = oColor;
         this.getChildren().clear();
         int height = (int) this.getPrefHeight();
         int width = (int) this.getPrefWidth();
@@ -63,19 +64,24 @@ public class Board extends GridPane implements Notifier {
                 cellBack.setStroke(Color.BLACK);
 
                 this.add(cellBack, j, i);
-                if (this.game_board[i][j] == 'X')
-                    this.add(new Circle(cellHeight / 2, xColor), j, i);
-                if (this.game_board[i][j] == 'O')
-                    this.add(new Circle(cellHeight / 2, oColor), j, i);
+                if (this.game_board[i][j] == 'X') {
+                    Circle cX = new Circle(cellHeight / 2 - cellHeight / 10, xColor);
+                    setHalignment(cX, HPos.CENTER);
+                    this.add(cX, j, i);
+                } else if (this.game_board[i][j] == 'O') {
+                    Circle cO = new Circle(cellHeight / 2 - cellHeight / 10, oColor);
+                    setHalignment(cO, HPos.CENTER);
+                    this.add(cO, j, i);
+                }
                 for (int k = 0; k < possibles_moves.size(); k++) {
                     if (possibles_moves.get(k).getRow() == i && possibles_moves.get(k).getCol() == j) {
-                        Rectangle possible = new Rectangle(cellWidth, cellHeight, Color.RED);
+                        Rectangle possible = new Rectangle(cellWidth, cellHeight, Color.WHITE);
+                        possible.setOpacity(0.5);
                         this.add(possible, j, i);
                         possible.setOnMouseClicked(event -> {
                             Node chosen = (Node) event.getSource();
                             int row = GridPane.getRowIndex(chosen);
                             int col = GridPane.getColumnIndex(chosen);
-                            System.out.println(row+" "+col);
                             this.clickNotify(row, col);
                         });
                     }

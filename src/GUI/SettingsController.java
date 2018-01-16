@@ -12,9 +12,11 @@ import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ColorPicker;
 import javafx.scene.layout.AnchorPane;
+import javafx.scene.paint.Color;
 import javafx.stage.Stage;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -37,7 +39,7 @@ public class SettingsController implements Initializable {
 
     @FXML
     ColorPicker pO;
-    
+
     @FXML
     Button back;
 
@@ -51,8 +53,13 @@ public class SettingsController implements Initializable {
     }
 
     @FXML
-    protected void save() {
-
+    protected void save() throws Exception {
+        PrintWriter writer = new PrintWriter("game_settings.txt", "UTF-8");
+        writer.println(this.first_player.getValue());
+        writer.println(this.pX.getValue().toString());
+        writer.println(this.pO.getValue().toString());
+        writer.println(this.board_size.getValue());
+        writer.close();
     }
 
     @FXML
