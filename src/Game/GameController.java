@@ -47,7 +47,6 @@ public class GameController implements Initializable, Listener {
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String line;
-        BufferedReader br;
         try {
             FileReader fileReader = new FileReader("game_settings.txt");
 
