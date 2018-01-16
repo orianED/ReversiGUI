@@ -87,7 +87,8 @@ public class GameLogic {
                         temp++;
                         if ((cell.getRow() + (k * temp)) >= this.board.getSize()
                                 || (cell.getCol() + (l * temp))
-                                >= this.board.getSize()
+                                >= this.board.getSize() || (cell.getRow() + (k * temp)) < 0
+                                || (cell.getCol() + (l * temp)) < 0
                                 || this.board.getBoard()[cell.getRow() + (k * temp)][cell.getCol()
                                 + (l * temp)] == ' ') {
                             break;

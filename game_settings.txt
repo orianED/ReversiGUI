@@ -1,4 +1,4 @@
-8
-Player X
-0x4d3399ff
-0xffffffff
+4
+Player O
+0xb36680ff
+0x331a80ff
