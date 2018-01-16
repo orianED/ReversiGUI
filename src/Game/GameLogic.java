@@ -28,27 +28,27 @@ public class GameLogic {
                             temp = 1; //raised for each second player sign in a row(col/cross).
                             if ((i + (k * temp)) < this.board.getSize()
                                     && (j + (l * temp)) < this.board.getSize()
-                                    && (i + (k * temp)) > 0 && (j + (l * temp)) > 0
+                                    && (i + (k * temp)) >= 0 && (j + (l * temp)) >= 0
                                     && this.board.getBoard()[i + (k * temp)][j
                                     + (l * temp)] != ' '
                                     && this.board.getBoard()[i + (k * temp)][j
                                     + (l * temp)] != player_color) {
                                 while (true) {
                                     ++temp;
-                                    if ((i + (k * temp)) > this.board.getSize()
+                                    if ((i + (k * temp)) >= this.board.getSize()
                                             || (i + (k * temp)) < 0
                                             || (j + (l * temp))
-                                            > this.board.getSize()
+                                            >= this.board.getSize()
                                             || (j + (l * temp)) < 0
                                             || this.board.getBoard()[i + (k * temp)][j
                                             + (l * temp)] == ' ') {
                                         break;
                                     } else if ((i + (k * temp))
-                                            <= this.board.getSize()
-                                            && (i + (k * temp)) > 0
+                                            < this.board.getSize()
+                                            && (i + (k * temp)) >= 0
                                             && (j + (l * temp))
-                                            <= this.board.getSize()
-                                            && (j + (l * temp)) > 0
+                                            < this.board.getSize()
+                                            && (j + (l * temp)) >= 0
                                             && this.board.getBoard()[i + (k * temp)][j
                                             + (l * temp)] == player_color) {
                                         possible_moves.add(new Cell(i, j));
@@ -85,9 +85,9 @@ public class GameLogic {
                         + (l * temp)] != player_color) {
                     while (true) {
                         temp++;
-                        if ((cell.getRow() + (k * temp)) > this.board.getSize()
+                        if ((cell.getRow() + (k * temp)) >= this.board.getSize()
                                 || (cell.getCol() + (l * temp))
-                                > this.board.getSize()
+                                >= this.board.getSize()
                                 || this.board.getBoard()[cell.getRow() + (k * temp)][cell.getCol()
                                 + (l * temp)] == ' ') {
                             break;
