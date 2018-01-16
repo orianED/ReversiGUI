@@ -31,7 +31,7 @@
             <Font size="15.0" />
          </font>
       </Label>
-      <Label layoutX="52.0" layoutY="193.0" text="Board Size:">
+      <Label layoutX="52.0" layoutY="193.0" text="Board Size(nxn):">
          <font>
             <Font size="15.0" />
          </font>
