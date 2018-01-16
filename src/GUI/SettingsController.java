@@ -32,7 +32,7 @@ public class SettingsController implements Initializable {
     ChoiceBox<String> board_size;
 
     @FXML
-    ObservableList<String> sizes = FXCollections.observableArrayList("4x4", "6x6", "8x8", "10x10", "12x12", "14x14", "16x16", "18x18", "20x20");
+    ObservableList<String> sizes = FXCollections.observableArrayList("4", "6", "8", "10", "12", "14", "16", "18", "20");
 
     @FXML
     ColorPicker pX;
@@ -53,20 +53,22 @@ public class SettingsController implements Initializable {
     }
 
     @FXML
-    protected void save() throws Exception {
+    protected void save(ActionEvent event) throws Exception {
         PrintWriter writer = new PrintWriter("game_settings.txt", "UTF-8");
+        writer.println(this.board_size.getValue());
         writer.println(this.first_player.getValue());
         writer.println(this.pX.getValue().toString());
         writer.println(this.pO.getValue().toString());
-        writer.println(this.board_size.getValue());
         writer.close();
+        backAction(event);
     }
 
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         first_player.setValue("Player X");
         first_player.setItems(players);
-        board_size.setValue("8x8");
+        pX.setValue(Color.BLACK);
+        board_size.setValue("8");
         board_size.setItems(sizes);
     }
 }

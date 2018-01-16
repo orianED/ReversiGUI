@@ -115,6 +115,7 @@ public class GameLogic {
             this.oScore++;
         }
         changeCells(cells_to_change, player_color);
+        cells_to_change.clear();
         this.board.getBoard()[cell.getRow()][cell.getCol()] = player_color;
     }
 
@@ -129,7 +130,6 @@ public class GameLogic {
                 this.xScore--;
                 this.oScore++;
             }
-            cells_to_change.remove(i);
         }
     }
 }
