@@ -43,6 +43,9 @@ public class SettingsController implements Initializable {
     @FXML
     Button back;
 
+    /*
+    backAction function set the main menu as the screen again.
+     */
     @FXML
     protected void backAction(ActionEvent event) throws IOException {
         AnchorPane menu = FXMLLoader.load(getClass().getResource("Menu.fxml"));
@@ -52,6 +55,9 @@ public class SettingsController implements Initializable {
         stage.show();
     }
 
+    /*
+    save function save the setting in file and back to the main menu.
+     */
     @FXML
     protected void save(ActionEvent event) throws Exception {
         PrintWriter writer = new PrintWriter("game_settings.txt", "UTF-8");
@@ -63,6 +69,9 @@ public class SettingsController implements Initializable {
         backAction(event);
     }
 
+    /*
+    initialize the settings screen.
+     */
     @FXML
     public void initialize(URL location, ResourceBundle resources) {
         first_player.setValue("Player X");

@@ -44,6 +44,9 @@ public class GameController implements Initializable, Listener {
     private Players currentPlayer, nextPlayer;
     private Color pXColor, pOColor;
 
+    /*
+    initialize the GameController.
+     */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         String line;
@@ -95,6 +98,9 @@ public class GameController implements Initializable, Listener {
         this.drawInfo();
     }
 
+    /*
+    implements the listener that notify on click and call to the draw.
+     */
     @Override
     public void click(Cell cell) {
         this.gameLogic.makeMove(cell, this.currentPlayer.getSign());
@@ -114,6 +120,9 @@ public class GameController implements Initializable, Listener {
         this.drawInfo();
     }
 
+    /*
+    drawing the information of the game.
+     */
     public void drawInfo() {
         this.current_player_root.getChildren().clear();
         Circle current = new Circle(this.current_player_root.getPrefHeight() / 2, this.currentPlayer.getColor());
@@ -139,12 +148,18 @@ public class GameController implements Initializable, Listener {
         this.o_score_root.getChildren().add(new Text(String.valueOf(this.gameLogic.getoScore())));
     }
 
+    /*
+    this function swap the player who need to play.
+     */
     public void swapPlayers() {
         Players temp = this.currentPlayer;
         this.currentPlayer = this.nextPlayer;
         this.nextPlayer = temp;
     }
 
+    /*
+    endGame function print the board and announce about the winner.
+     */
     public void endGame() {
         this.board.draw(this.gameLogic.generateMoves(this.currentPlayer.getSign()), this.pXColor, this.pOColor);
         this.drawInfo();
@@ -167,6 +182,9 @@ public class GameController implements Initializable, Listener {
         this.winner.getChildren().add(w);
     }
 
+    /*
+    set the main menu as the screen.
+     */
     @FXML
     protected void returnToMenu(ActionEvent event) throws IOException {
         AnchorPane menu = FXMLLoader.load(getClass().getResource("../GUI/Menu.fxml"));

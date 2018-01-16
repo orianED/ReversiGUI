@@ -14,6 +14,9 @@ public class Controller {
     @FXML
     AnchorPane background;
 
+    /*
+    start function initialize the game screen.
+     */
     @FXML
     protected void start(ActionEvent event) throws IOException {
         AnchorPane game = FXMLLoader.load(getClass().getResource("../Game/Game.fxml"));
@@ -23,6 +26,9 @@ public class Controller {
         stage.show();
     }
 
+    /*
+    settings function initialize the settings screen.
+     */
     @FXML
     protected void settings(ActionEvent event) throws IOException {
         AnchorPane Settings = FXMLLoader.load(getClass().getResource("Settings.fxml"));
@@ -32,6 +38,9 @@ public class Controller {
         stage.show();
     }
 
+    /*
+    exit function exit from the game.
+     */
     @FXML
     protected void exit() {
         System.exit(1);
