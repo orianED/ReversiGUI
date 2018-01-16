@@ -35,10 +35,10 @@ public class SettingsController implements Initializable {
     ObservableList<String> sizes = FXCollections.observableArrayList("4", "6", "8", "10", "12", "14", "16", "18", "20");
 
     @FXML
-    ColorPicker pX;
+    ColorPicker pXColor;
 
     @FXML
-    ColorPicker pO;
+    ColorPicker pOColor;
 
     @FXML
     Button back;
@@ -57,8 +57,8 @@ public class SettingsController implements Initializable {
         PrintWriter writer = new PrintWriter("game_settings.txt", "UTF-8");
         writer.println(this.board_size.getValue());
         writer.println(this.first_player.getValue());
-        writer.println(this.pX.getValue().toString());
-        writer.println(this.pO.getValue().toString());
+        writer.println(this.pXColor.getValue().toString());
+        writer.println(this.pOColor.getValue().toString());
         writer.close();
         backAction(event);
     }
@@ -67,7 +67,7 @@ public class SettingsController implements Initializable {
     public void initialize(URL location, ResourceBundle resources) {
         first_player.setValue("Player X");
         first_player.setItems(players);
-        pX.setValue(Color.BLACK);
+        pXColor.setValue(Color.BLACK);
         board_size.setValue("8");
         board_size.setItems(sizes);
     }

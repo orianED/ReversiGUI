@@ -133,4 +133,12 @@ public class GameLogic {
             }
         }
     }
+
+    public int getxScore() {
+        return xScore;
+    }
+
+    public int getoScore() {
+        return oScore;
+    }
 }

@@ -1,9 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.text.*?>
-<?import java.lang.*?>
-<?import java.util.*?>
-<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -19,10 +16,25 @@
             <Font name="Arial" size="15.0" />
          </font>
       </Label>
-      <ColorPicker fx:id="pX" layoutX="150.0" layoutY="80.0" prefHeight="30.0" prefWidth="100.0" />
-      <ColorPicker fx:id="pO" layoutX="400.0" layoutY="80.0" prefHeight="30.0" prefWidth="100.0" />
-      <ChoiceBox fx:id="board_size" layoutX="200.0" layoutY="174.0" prefWidth="150.0" />
+      <ColorPicker fx:id="pXColor" layoutX="224.0" layoutY="80.0" prefHeight="30.0" prefWidth="100.0" />
+      <ColorPicker fx:id="pOColor" layoutX="226.0" layoutY="131.0" prefHeight="30.0" prefWidth="100.0" />
+      <ChoiceBox fx:id="board_size" layoutX="226.0" layoutY="188.0" prefHeight="19.0" prefWidth="100.0" />
       <Button fx:id="back" layoutX="414.0" layoutY="299.0" mnemonicParsing="false" onAction="#backAction" text="Back" />
       <Button fx:id="save" layoutX="66.0" layoutY="291.0" mnemonicParsing="false" onAction="#save" text="Save" />
+      <Label layoutX="51.0" layoutY="87.0" text="Player X Color:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="139.0" text="Player O Color:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="193.0" text="Board Size:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

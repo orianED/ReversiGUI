@@ -10,7 +10,6 @@ public class Main extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        //Parent root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         AnchorPane root = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         primaryStage.setTitle("Reversi");
         primaryStage.setScene(new Scene(root));

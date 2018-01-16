@@ -52,6 +52,7 @@ public class Board extends GridPane implements Notifier {
         this.possibles_moves = possibles_moves;
         this.xColor = xColor;
         this.oColor = oColor;
+
         this.getChildren().clear();
         int height = (int) this.getPrefHeight();
         int width = (int) this.getPrefWidth();
