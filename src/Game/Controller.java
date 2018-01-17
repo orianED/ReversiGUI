@@ -1,4 +1,4 @@
-package GUI;
+package Game;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -19,7 +19,7 @@ public class Controller {
      */
     @FXML
     protected void start(ActionEvent event) throws IOException {
-        AnchorPane game = FXMLLoader.load(getClass().getResource("../Game/Game.fxml"));
+        AnchorPane game = FXMLLoader.load(getClass().getResource("Game.fxml"));
         Scene g = new Scene(game);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(g);

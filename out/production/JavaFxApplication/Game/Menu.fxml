@@ -3,7 +3,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(/Images/reversi.jpg);-fx-background-size:stretch ;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+<AnchorPane fx:id="background" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" style="-fx-background-image: url(/Images/reversi.jpg);-fx-background-size:stretch ;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Game.Controller">
     <children>
         <Button layoutX="100.0" layoutY="280.0" mnemonicParsing="false" onAction="#start" text="Start" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="295.0" />
         <Button layoutX="250.0" layoutY="280.0" mnemonicParsing="false" onAction="#settings" text="Settings" AnchorPane.bottomAnchor="80.0" AnchorPane.topAnchor="295.0" />

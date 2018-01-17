@@ -1,4 +1,0 @@
-4
-Player X
-0x000000ff
-0xffffffff

@@ -49,6 +49,13 @@ public class GameController implements Initializable, Listener {
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
+        //default settings
+        this.board = new Board(8);
+        this.currentPlayer = new HumanPlayer('X', Color.BLACK);
+        this.nextPlayer = new HumanPlayer('O', Color.WHITE);
+        this.pXColor = this.currentPlayer.getColor();
+        this.pOColor = this.nextPlayer.getColor();
+
         String line;
         try {
             FileReader fileReader = new FileReader("game_settings.txt");
@@ -78,11 +85,6 @@ public class GameController implements Initializable, Listener {
 
             bufferedReader.close();
         } catch (FileNotFoundException ex) {
-            //default settings
-            this.board = new Board(8);
-            this.currentPlayer = new HumanPlayer('X', Color.BLACK);
-            this.nextPlayer = new HumanPlayer('O', Color.WHITE);
-
             System.out.println("Unable to open file 'game_settings.txt'");
         } catch (IOException ex) {
             System.out.println("Error reading file 'game_settings.txt'");
@@ -187,7 +189,7 @@ public class GameController implements Initializable, Listener {
      */
     @FXML
     protected void returnToMenu(ActionEvent event) throws IOException {
-        AnchorPane menu = FXMLLoader.load(getClass().getResource("../GUI/Menu.fxml"));
+        AnchorPane menu = FXMLLoader.load(getClass().getResource("Menu.fxml"));
         Scene men = new Scene(menu);
         Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(men);
