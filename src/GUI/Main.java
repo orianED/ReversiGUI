@@ -8,7 +8,7 @@ import javafx.stage.Stage;
 
 public class Main extends Application {
 
-    /*
+    /**
     start function initialize the game menu screen.
      */
     @Override
@@ -20,7 +20,7 @@ public class Main extends Application {
     }
 
 
-    /*
+    /**
     main of the game.
      */
     public static void main(String[] args) {

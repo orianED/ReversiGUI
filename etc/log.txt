@@ -1,0 +1,95 @@
+commit 9779a0e1c224a08b74b1d559ce272229f090a2e8
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Tue Jan 16 21:03:00 2018 +0200
+
+    add comment
+
+commit 40c1c2bfa0bc8631667996a82d327af3f98582c4
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Tue Jan 16 20:38:45 2018 +0200
+
+    fix button move
+
+commit ebe09c1e0f57c325d5c031f98ac5cb8a5810ceb8
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Tue Jan 16 20:25:23 2018 +0200
+
+    add background
+
+commit ca97873027782737102a310c00695b7ee1c996ea
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Tue Jan 16 19:48:18 2018 +0200
+
+    game info bar
+
+commit 8a20aa53fe680c8e9b41e5eaf377f7d7133d3e1c
+Author: Alihom <alihom2702>
+Date:   Tue Jan 16 15:30:58 2018 +0300
+
+    Another generate moves fixed
+
+commit 0e4317b870c9be6afc4aae57b9891083bd622fdc
+Author: Alihom <alihom2702>
+Date:   Tue Jan 16 15:23:48 2018 +0300
+
+    Generate moves fixed
+
+commit 9bc4bc502ed9acd027caf5d2bf724c59725e855d
+Author: Alihom <alihom2702>
+Date:   Tue Jan 16 15:11:55 2018 +0300
+
+    Problem fixed
+
+commit 746dd5645efc0d907dfa1c082422c40c9c798133
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Tue Jan 16 10:59:46 2018 +0200
+
+    save button
+
+commit 88ee93549dbf05be2be5853d84ecfdcad55b0214
+Author: Alihom <alihom2702>
+Date:   Mon Jan 15 15:43:47 2018 +0300
+
+    ma seata rosggg
+
+commit 34aa220057ed79c46fdf4b892738ab85d3132330
+Author: Alihom <alihom2702>
+Date:   Mon Jan 15 15:33:51 2018 +0300
+
+    ma seata roshe
+
+commit 1b437780fa25d8d3c2b40ce66b23bdf075e2cbac
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Mon Jan 15 12:00:12 2018 +0200
+
+    draw board
+
+commit 8c8d31a6dc2d27818bd470b729927ff4a5ca2891
+Author: Alihom <alihom2702>
+Date:   Sun Jan 14 18:24:00 2018 +0300
+
+    Start fixed
+
+commit e8465add4b91ac7437864ae781ac4e530bc476e8
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Sun Jan 14 14:20:54 2018 +0200
+
+    add board draw
+
+commit daf484e25cf62584503f811253e31d6b7709fa6d
+Author: Alihom <alihom2702>
+Date:   Sat Jan 13 21:32:58 2018 +0300
+
+    new fxml and controller
+
+commit 586bbf9b34fe165eb712373b34c3164f90c16422
+Author: Alihom <alihom2702>
+Date:   Sat Jan 13 19:26:47 2018 +0300
+
+    Gui
+
+commit 6c140ddec093a2326faa0aa8c006e4cbb57500d0
+Author: Orian Edri <orian.derei@gmail.com>
+Date:   Thu Jan 11 21:43:57 2018 +0200
+
+    first commit

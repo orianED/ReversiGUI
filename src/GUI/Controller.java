@@ -14,7 +14,7 @@ public class Controller {
     @FXML
     AnchorPane background;
 
-    /*
+    /**
     start function initialize the game screen.
      */
     @FXML
@@ -26,7 +26,7 @@ public class Controller {
         stage.show();
     }
 
-    /*
+    /**
     settings function initialize the settings screen.
      */
     @FXML
@@ -38,7 +38,7 @@ public class Controller {
         stage.show();
     }
 
-    /*
+    /**
     exit function exit from the game.
      */
     @FXML

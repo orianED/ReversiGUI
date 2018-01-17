@@ -44,8 +44,8 @@ public class GameController implements Initializable, Listener {
     private Players currentPlayer, nextPlayer;
     private Color pXColor, pOColor;
 
-    /*
-    initialize the GameController.
+    /**
+     * initialize the Game.
      */
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -59,7 +59,7 @@ public class GameController implements Initializable, Listener {
                 this.board = new Board(Integer.parseInt(line));
             }
             if ((line = bufferedReader.readLine()) != null) {
-                if (line == "Player X") {
+                if (line.equals("Player X")) {
                     line = bufferedReader.readLine();
                     this.currentPlayer = new HumanPlayer('X', Color.valueOf(line));
                     this.pXColor = this.currentPlayer.getColor();
@@ -93,13 +93,12 @@ public class GameController implements Initializable, Listener {
         this.gameLogic = new GameLogic(this.board);
         this.board.addListener(this);
 
-
         this.board.draw(this.gameLogic.generateMoves(this.currentPlayer.getSign()), this.pXColor, this.pOColor);
         this.drawInfo();
     }
 
-    /*
-    implements the listener that notify on click and call to the draw.
+    /**
+     * implements the listener that notify on click and call to the draw.
      */
     @Override
     public void click(Cell cell) {
@@ -120,8 +119,8 @@ public class GameController implements Initializable, Listener {
         this.drawInfo();
     }
 
-    /*
-    drawing the information of the game.
+    /**
+     * drawing the information of the game.
      */
     public void drawInfo() {
         this.current_player_root.getChildren().clear();
@@ -148,8 +147,8 @@ public class GameController implements Initializable, Listener {
         this.o_score_root.getChildren().add(new Text(String.valueOf(this.gameLogic.getoScore())));
     }
 
-    /*
-    this function swap the player who need to play.
+    /**
+     * this function swap the player who need to play.
      */
     public void swapPlayers() {
         Players temp = this.currentPlayer;
@@ -157,8 +156,8 @@ public class GameController implements Initializable, Listener {
         this.nextPlayer = temp;
     }
 
-    /*
-    endGame function print the board and announce about the winner.
+    /**
+     * endGame function print the board and announce about the winner.
      */
     public void endGame() {
         this.board.draw(this.gameLogic.generateMoves(this.currentPlayer.getSign()), this.pXColor, this.pOColor);
@@ -179,11 +178,12 @@ public class GameController implements Initializable, Listener {
             w = new Text("Draw!");
         }
         w.setFont(new Font("system", 25));
+        w.setStroke(Color.BLACK);
         this.winner.getChildren().add(w);
     }
 
-    /*
-    set the main menu as the screen.
+    /**
+     * set the main menu as the screen.
      */
     @FXML
     protected void returnToMenu(ActionEvent event) throws IOException {

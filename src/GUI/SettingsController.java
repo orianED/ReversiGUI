@@ -43,7 +43,7 @@ public class SettingsController implements Initializable {
     @FXML
     Button back;
 
-    /*
+    /**
     backAction function set the main menu as the screen again.
      */
     @FXML
@@ -55,7 +55,7 @@ public class SettingsController implements Initializable {
         stage.show();
     }
 
-    /*
+    /**
     save function save the setting in file and back to the main menu.
      */
     @FXML
@@ -69,7 +69,7 @@ public class SettingsController implements Initializable {
         backAction(event);
     }
 
-    /*
+    /**
     initialize the settings screen.
      */
     @FXML
